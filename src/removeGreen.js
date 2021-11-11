@@ -23,4 +23,3 @@ export async function removeGreen(buff) {
   }).toFile(OUT_FILE);
   return OUT_FILE;
 }
-removeGreen("./temp/calcGreen.png");
