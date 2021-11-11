@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/textfit/2.4.0/textFit.min.js"
+      integrity="sha512-vLs5rAqfvmv/IpN7JustROkGAvjK/L+vgVDFe7KpdtLztqF8mZDfleK2MZj/xuOrWjma0pW+lPCMcBbPKJVC7g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <h1>Citation du jour</h1>
+
+    <p class="cite">{{cite}}</p>
+    <span class="date">{{date}}</span>
+
+    <script>
+      window.onload = function () {
+        const citeElem = document.querySelector(".cite");
+        textFit(citeElem, {
+          multiLine: true,
+          // maxFontSize: 100,
+        });
+        const textFitted = document.querySelector(".textFitted");
+        const fontSize = parseInt(textFitted.style.fontSize);
+        citeElem.style.lineHeight = fontSize + 50 + "px";
+        textFitted.style.webkitTextStrokeWidth =
+          Math.round(fontSize / 3) + "px";
+        textFit(citeElem);
+      };
+    </script>
+
+    <style>
+      * {
+        font-family: Tahoma;
+        font-weight: 600;
+        font-size: 90px;
+        text-align: center;
+        color: white;
+        paint-order: stroke fill;
+        -webkit-text-stroke: 30px black;
+      }
+      h1 {
+        /* margin-top: 150px; */
+        font-size: 120px;
+        width: 100%;
+      }
+
+      p {
+        line-height: 120px;
+        margin: 0 auto;
+        font-size: 110px;
+        width: 80%;
+        height: 50%;
+        display: grid;
+        place-items: center;
+      }
+      .date {
+        font-size: 75px;
+        text-align: end;
+        margin: 7px;
+      }
+
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #0f0;
+        outline: white solid 10px;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        opacity: 0.1;
+      }
+    </style>
+  </body>
+</html>

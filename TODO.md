@@ -1,0 +1,1 @@
+ [ ] add music `ffmpeg  -stream_loop -1 -i .\10-11-21.mp4 -i .\assets\music.mp3 -shortest -map 0:v:0 -map 1:a:0 -y out.mp4`
